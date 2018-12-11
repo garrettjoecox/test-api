@@ -1,8 +1,10 @@
 const https = require('https');
 const Koa = require('koa');
+const cors = require('@koa/cors');
 const server = new Koa();
 const fs = require('fs');
 
+server.use(cors());
 server.use(async (ctx, next) => {
   ctx.body = { hello: 'world' };
 })
